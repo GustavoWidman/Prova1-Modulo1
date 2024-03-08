@@ -37,21 +37,15 @@ A estrutura do projeto é composta por pastas e arquivos que organizam os comand
 
 ```bash
 .
-├── classes
-│   └── robot.py
-├── commands
-│   ├── atual.py
-│   ├── ferramenta.py
-│   ├── home.py
-│   ├── interface.py
-│   ├── mover.py
-├── constants.json
-├── interface
+├── api
+│   ├── __pycache__
+│   └── router.py
+├── caminhos.json
+├── database
 │   ├── main.py
+│   └── __pycache__
+├── index.html
 ├── main.py
 ├── README.md
-├── requirements.txt
-└── utils
-    ├── ports.py
-    └── text.py
+└── requirements.txt
 ```
