@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		function submitForm(e) {
+			e.preventDefault();
+			const id = document.getElementById('id').value;
+			window.location.href = 'http://localhost:3000/pegar_caminho/' + id;
+		}
+
+		function submitUpdateForm(e) {
+			e.preventDefault();
+			const id = document.getElementById('id_update').value;
+			const caminho = document.getElementById('caminho_update').value;
+			window.location.href = 'http://localhost:3000/atualizar_caminho/' + id + '/' + caminho;
+		}
+
+		function submitDeleteForm(e) {
+			e.preventDefault();
+			const id = document.getElementById('id_delete').value;
+			window.location.href = 'http://localhost:3000/deletar/' + id;
+		}
+	</script>
+</head>
+<body>
+	<form action="http://localhost:3000/listar_caminhos" method="get">
+		<button type="submit">Listar caminhos</button>
+	</form>
+
+	<form onsubmit="submitForm(event)">
+		<input type="number" id="id" placeholder="Enter ID">
+		<button type="submit">Pegar caminho</button>
+	</form>
+
+	<form action="http://localhost:3000/novo" method="post">
+		<input type="text" name="caminho" placeholder="Enter caminho">
+		<button type="submit">Criar caminho</button>
+	</form>
+
+	<form onsubmit="submitDeleteForm(event)">
+		<input type="number" id="id_delete" placeholder="Enter ID">
+		<button type="submit">Deletar caminho</button>
+	</form>
+
+	<form onsubmit="submitUpdateForm(event)">
+		<input type="number" id="id_update" placeholder="Enter ID">
+		<input type="text" id="caminho_update" placeholder="Enter caminho">
+		<button type="submit">Atualizar caminho</button>
+	</form>
+
+</body>
+</html>
